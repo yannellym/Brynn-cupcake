@@ -1,6 +1,6 @@
 .container {
-  height: calc(100vh - 100px);
-  background-color: #fdb4b4;
+  height: calc(100vh - 200px);
+  background-color: #ffffff;
   overflow: hidden;
   position: relative;
 }
@@ -17,7 +17,7 @@
 }
 
 .wrapper {
-  width: 200vw;
+  width: 300vw;
   height: 100%;
   display: flex;
   transition: all 1.5s ease-in-out ;
