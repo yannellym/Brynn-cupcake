@@ -1,16 +1,18 @@
 import styles from '../styles/CupcakeCard.module.css'
 import Image from "next/image";
+import Link from 'next/link';
 
-const CupcakeCard = () => {
+
+const CupcakeCard = ( { product }) => {
     return (
-        <div className={styles.container}>
-             <Image src="/img/hero4.png" alt="" width="500" height="500" />
-             <h1 className={styles.title}>Choco Flav</h1>
-             <span className={styles.price}>$12</span>
+        <div className={styles.container}>   
+             <Link href={`/products/${product._id}`} passHref>   
+                <Image src={product.img} alt="" width="500" height="500" /> 
+             </Link>
+             <h1 className={styles.title}>{product.title}</h1>
+             <span className={styles.prices}>{product.prices[0]}</span>
              <p className={styles.desc}>
-                 Lorem ipsum dolor sit amet, consectetur adipisicing 
-                 elit. Ex quo veritatis provident. Nobis quo aliquam 
-                 illo quam corrupti magni omnis. 
+                 {product.desc}
              </p>
         </div>
       );
