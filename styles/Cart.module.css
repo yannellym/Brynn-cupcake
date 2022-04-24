@@ -63,6 +63,13 @@
     border: none;
     box-shadow: 1px 1px 4px 2px rgb(195, 83, 83);
   }
+  .paymentMethods {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    min-width: 90%;
+    outline: red solid;
+  }
   
   @media screen and (max-width: 480px) {
     .container {
