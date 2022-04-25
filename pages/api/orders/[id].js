@@ -15,7 +15,14 @@ const handler = async (req, res) => {
         }
     }
     if(method === "PUT"){
-        
+        try{
+           const order = await Order.findByIdAndUpdate(id, req.body, {
+                new: true,
+            }); //ADDS products to database
+            res.status(201).json(order) //if adedd  successfully.
+         }catch(err){
+             res.status(500).json(err);
+         }
     }
     if(method === "DELETE"){
         
