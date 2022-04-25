@@ -67,8 +67,8 @@
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-    min-width: 90%;
     outline: red solid;
+    min-height: 100px;
   }
   
   @media screen and (max-width: 480px) {
