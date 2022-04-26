@@ -17,9 +17,7 @@ export default async function handler(req, res) {
         }
     }
     if(method === "POST"){
-        if(!token || token !== process.env.token){
-            return res.status(401).json("you are not authorized to make this post request");
-        }
+        
         try{
            const product = await Product.create(req.body);
            res.status(201).json(product) //if adedd  successfully.

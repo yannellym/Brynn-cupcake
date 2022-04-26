@@ -147,7 +147,7 @@ const Cart = () => {
             
                     <div className={styles.totalText}>
                         <b className={styles.totalTextTitle}>Total: </b>
-                        {cart.total}
+                        ${cart.total}
                     </div>
                     {open ? 
                         (

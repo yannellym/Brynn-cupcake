@@ -9,7 +9,7 @@ const Index = ( { orders, products }) => {
 
     const [productList, setProductList] = useState(products);
     const [orderList, setOrderList] = useState(orders);
-    const status = ["Notifying Baker", "Baking", "Ready" ];
+    const status = ["Notifying Baker", "Baking", "Ready", "Complete"];
 
     const handleDelete = async (id) => {
         try{
@@ -38,6 +38,9 @@ const Index = ( { orders, products }) => {
                 res.data, //this will add the new status we just got above.
                 ...orderList.filter(order => order._id !== id) // this will delete the order in the order list. 
             ])
+            if(orderList[0] === "Complete"){
+                console.log("YES!")
+            }
         }catch(err){
             console.log(err);
         }
