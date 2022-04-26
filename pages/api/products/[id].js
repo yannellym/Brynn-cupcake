@@ -7,9 +7,11 @@ export default async function handler(req, res) {
     const { 
         method, 
         query: { id }, //THIS QUERY IS WHAT WE SEND AFTER PRODUCTS => THE PARAMS(PRODUCT ID)
+        cookies,
     } = req; 
+    const token = cookies.token;
 
-    dbConnect();
+    await dbConnect();
 
     if(method === "GET"){
         try{
@@ -30,6 +32,9 @@ export default async function handler(req, res) {
         }
     }
     if(method === "DELETE"){ // DELETES PRODUCTS from database
+        if(!token || token !== process.env.token){
+            return res.status(401).json("you are not authorized to make this post request");
+        }
         try{
            const product = await Product.findByIdAndDelete(id);
            res.status(201).json("Product is now deleted!") 

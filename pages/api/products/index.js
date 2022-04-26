@@ -2,9 +2,11 @@ import dbConnect from "../../../library/mongo"
 import Product from "../../../models/Product"
 
 export default async function handler(req, res) {
-    const { method } = req; //GET POST PUT DELETE
+    const { method, cookies } = req; //GET POST PUT DELETE
 
-    dbConnect();
+    const token = cookies.token;
+
+    await dbConnect();
 
     if(method === "GET"){
         try{
@@ -15,6 +17,9 @@ export default async function handler(req, res) {
         }
     }
     if(method === "POST"){
+        if(!token || token !== process.env.token){
+            return res.status(401).json("you are not authorized to make this post request");
+        }
         try{
            const product = await Product.create(req.body);
            res.status(201).json(product) //if adedd  successfully.
