@@ -12,12 +12,12 @@ const Navbar = () => {
                 <div className={styles.callButton}>
                   <Link href="/">
                     <a>
-                        <Image src="/img/hero2.png" alt="logo" width="80" height="90" />
+                        <Image src="/img/hero3.png" alt="logo" width="70" height="90" />
                     </a>
                   </Link> 
                 </div>
                 <div className={styles.texts}>
-                    <div className={styles.text}>CupcakesxBrynn</div>
+                    <div className={styles.text}>Baked by Brynn</div>
    
                 </div>
             </div>

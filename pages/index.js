@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Featured from '../components/Featured'
 import styles from '../styles/Home.module.css'
 import ProductList from '../components/ProductList'
+import About from '../components/About'
 import axios from 'axios'
 import Add from '../components/Add'
 import AddButton from '../components/AddButton'
@@ -19,6 +20,7 @@ export default function Home( { productList, admin }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Featured />
+      <About />
       {admin && <span> <AddButton setClose={setClose} /> </span>}
       <ProductList productList={productList} />
       {!close && <Add setClose={setClose} />}

@@ -38,18 +38,19 @@ const Index = ( { orders, products }) => {
                 res.data, //this will add the new status we just got above.
                 ...orderList.filter(order => order._id !== id) // this will delete the order in the order list. 
             ])
-            if(orderList[0] === "Complete"){
-                console.log("YES!")
-            }
+    
         }catch(err){
             console.log(err);
         }
     }
+
+
+
     return (
         <div>
             <div className={styles.container}>
                 <div className={styles.item}>
-                    <h1 className={styles.title}>Products</h1>
+                    <h1 className={styles.title}> My Products 🧁 </h1>
                     <table className={styles.table}>
                         <tbody>
                             <tr className={styles.trTitle}>
@@ -64,7 +65,7 @@ const Index = ( { orders, products }) => {
                     <table className={styles.table}>
                         {productList.map(product => (
                             <tbody key={product._id}>
-                            <tr className={styles.trTitle}>
+                            <tr className={styles.trTitle1}>
                                 <td>
                                     <Image 
                                         src={product.img}
@@ -78,8 +79,7 @@ const Index = ( { orders, products }) => {
                                 <td>{product.title}</td>
                                 <td>${product.prices[0]}</td>
                                 <td>
-                                    <button className={styles.button}>Edit</button>
-                                    <button className={styles.button} onClick={ () => handleDelete(product._id) }>Delete</button> 
+                                    <button className={styles.button1} onClick={ () => handleDelete(product._id) }>Delete Item</button> 
                                 </td>
                             </tr>
                         </tbody>
@@ -88,21 +88,24 @@ const Index = ( { orders, products }) => {
                     </table>    
                 </div>
                 <div className={styles.item}>
-                    <h1 className={styles.title}>Orders</h1>
-                    <table className={styles.table}>
+                    <h1 className={styles.title}> Current Orders 📝  </h1>
+                    <table className={styles.table2}>
                         <tbody>
-                            <tr className={styles.trTitle}>
+                            <tr className={styles.trTitle1}>
                                 <th>ID</th>
+                                <th>Product</th>
                                 <th>Customer</th>
                                 <th>Total</th>
                                 <th>Status</th>
                                 <th>Action</th>
+                                <th>Next step</th>
                             </tr>
                         </tbody>
                             {orderList.map( order => (
                                 <tbody key={order._id}>
-                            <tr className={styles.trTitle}>
+                            <tr className={styles.trTitle1}>
                                 <td> {order._id.slice(0,7)}... </td>
+                                <td> {order.title}</td>
                                 <td> {order.customer}</td>
                                 <td> {order.total} </td>
                                 <td> {order.method === 1 && <span>PAID</span>} </td>

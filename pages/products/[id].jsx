@@ -8,9 +8,10 @@ import { addProduct } from "../../redux/cartSlice";
 const Product = ( { product }) => {
     const [size, setSize] = useState(0);
     const [price, setPrice] = useState(product.prices[0]);
-    const [extras, setExtras] = useState([]);
     const [quantity, setQuantity] = useState(1);
     const dispatch = useDispatch();
+    const [title, setTitle] = useState("");
+    
     
     const changePrice = (number) => {  // This func will change the price according to the size chosen.
         setPrice(price + number) 
@@ -33,8 +34,8 @@ const Product = ( { product }) => {
         changePrice(difference);
         //calls the function changePrice and gives it the difference parameter
         //Example #1, will send 0 as the difference  
-        //Example #2, will send 12 as the difference  
-
+        //Example #2, will send 12 as the difference 
+        setTitle(product.title) 
     }
     const handleChange = (e, option) => {  //if the input was checked, we will add the 
         const checked = e.target.checked;
@@ -52,7 +53,8 @@ const Product = ( { product }) => {
     }
 
     const handleClick = () => {
-        dispatch(addProduct({...product, extras, price, quantity}));  //passess a payload with the addProduct reducer. Returns product price, details, quantity, extras, and price.
+       
+        dispatch(addProduct({...product, price, quantity, title}));  //passess a payload with the addProduct reducer. Returns product price, details, quantity, extras, and price.
     };
 
     return (
@@ -65,11 +67,6 @@ const Product = ( { product }) => {
             <div className={styles.right}>
                 <h1 className={styles.title}>{product.title}</h1>
                 <span className={styles.price}> ${price}</span>
-                <p className={styles.desc}>{product.desc}</p>
-                <p>
-                    Please contact us with specific requests and/<br />
-                    or any allergies to ingredients like peanut butter.
-                </p>
                 <h3 className={styles.choose}>Choose the size</h3>
                 <div className={styles.sizes}>
                     <div className={styles.size} onClick={ () => handleSize(0)}> 
@@ -85,23 +82,13 @@ const Product = ( { product }) => {
                         <span className={styles.number}>Gourmet</span>
                     </div>
                 </div>
-                <h3 className={styles.choose}>Choose additional ingredients</h3>
-                <div className={styles.ingredients}>
-                {product.extraOptions.map( option => (
-                    <div className={styles.option} key={option._id}>
-                        <input 
-                            className={styles.checkbox}
-                            type="checkbox" 
-                            name={option.text}
-                            id={option.text}
-                            onChange={(e) => handleChange(e, option)} 
-                        />
-                        <label htmlFor="sprinkles">{option.text}</label>
-                    </div>
-                ))}
-                    
-                    
-                </div>
+        
+                <p className={styles.desc}>{product.desc}</p>
+                <p>
+                    Please contact us with specific requests and/<br />
+                    or any allergies to ingredients like peanut butter.
+                </p>
+                
                 <div className={styles.add}>
                     <input 
                         type="number" 

@@ -2,7 +2,7 @@ import dbConnect from "../../../library/mongo";
 import Order from "../../../models/Order";
 
 const handler = async (req, res) => {
-    const { method, query:{id} } = req;
+    const { method, query: {id} } = req;
 
     await dbConnect();
 

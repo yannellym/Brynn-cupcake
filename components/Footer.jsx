@@ -1,11 +1,12 @@
 import styles from "../styles/Footer.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
     return (
         <div className={styles.container}>
             <div className={styles.item}>
-            <Image src="/img/hero3.png" alt="footer" layout="fill" />
+                <Image src="/img/hero3.png" alt="footer" layout="fill" />
             </div>
             <div className={styles.item}>
                 <div className={styles.card}>
@@ -15,15 +16,15 @@ const Footer = () => {
                 </div>
                 <div className={styles.card}>
                     <h1 className={styles.title}> SOCIAL MEDIA</h1>
-                    <p className={styles.text}>
-                        2345 Butter Ave, CT, 1394I54
-                    </p>
-                    <p className={styles.text}>
-                        2345 Butter Ave, CT, 1394I54
-                    </p>
-                    <p className={styles.text}>
-                        2345 Butter Ave, CT, 1394I54
-                    </p>
+                    <Link href="https://www.instagram.com/" passHref> 
+                        <Image src="/img/insta.png" className={styles.social} alt="footer" width={50} height={50} /> 
+                    </Link>
+                    <Link href="https://www.facebook.com/" passHref> 
+                        <Image src="/img/facebook.png" className={styles.social} alt="footer" width={50} height={50} />
+                    </Link>
+                    <Link href="https://www.linkedin.com/" passHref> 
+                        <Image src="/img/in.png" className={styles.social} alt="footer" width={50} height={50} /> 
+                    </Link>
                 </div>
                 <div className={styles.card}>
                     <h1 className={styles.title}> WORKING HOURS</h1>

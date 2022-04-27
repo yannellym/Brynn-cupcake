@@ -1,11 +1,11 @@
 .container{
     height: calc(100vh -100px);
-    background-color: rgb(217, 126, 126);
+    background-color: rgb(0, 0, 0);
     display: flex;
 }
 
 .item{
-    flex: 1;
+    flex: .6;
     position: relative;
     display: flex;
 }
@@ -21,6 +21,12 @@
 .title{
     font-size: 18px;
     color: rgb(75, 237, 226);
+}
+.social{
+  cursor: pointer;
+}
+.social:hover{
+  background-color: rgb(40, 159, 151);
 }
   
 .text {

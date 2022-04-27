@@ -19,6 +19,7 @@ const  Order = ( { order }) => {
           <table className={styles.table}>
             <tr className={styles.trTitle}>
               <th>Order ID</th>
+              <th>Product</th>
               <th>Customer</th>
               <th>Address</th>
               <th>Total</th>
@@ -28,13 +29,16 @@ const  Order = ( { order }) => {
                 <span className={styles.id}>{order._id}</span>
               </td>
               <td>
+                <span className={styles.id}>{order.title}</span>
+              </td>
+              <td>
                 <span className={styles.name}>{order.customer}</span>
               </td>
               <td>
                 <span className={styles.address}>{order.address}</span>
               </td>
               <td>
-                <span className={styles.total}>{order.total}</span>
+                <span className={styles.total}> ${order.total}</span>
               </td>
             </tr>
           </table>
@@ -98,7 +102,7 @@ const  Order = ( { order }) => {
         <div className={styles.wrapper}>
           <h2 className={styles.title}>CART TOTAL</h2>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Total:</b>{order.total}
+            <b className={styles.totalTextTitle}>Total:</b> $ {order.total}
           </div>
           <button disabled className={styles.button}>
             PAID

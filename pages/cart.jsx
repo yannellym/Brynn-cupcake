@@ -17,6 +17,7 @@ const Cart = () => {
     const cart = useSelector(state => state.cart);
     const router = useRouter();
 
+
     const createOrder = async (data) => {
         try{
             const res = await axios.post("http://localhost:3000/api/orders", data)
@@ -32,7 +33,9 @@ const Cart = () => {
     const amount = cart.total;
     const currency = "USD";
     const style = {"layout":"vertical"};
+    const title = cart.title;
 
+    
    // Custom component to wrap the PayPalButtons and handle currency changes
     const ButtonWrapper = ({ currency, showSpinner }) => {
     // usePayPalScriptReducer can be use only inside children of PayPalScriptProviders
@@ -77,11 +80,13 @@ const Cart = () => {
                 onApprove={function (data, actions) {
                     return actions.order.capture().then(function (details) {
                         const shipping = details.purchase_units[0].shipping;
+    
                         createOrder({
                             customer: shipping.name.full_name,
                             address: shipping.address.address_line_1,
                             total: cart.total,
                             method: 1,  //to pay with paypal
+                            title: cart.title,
                         })
                     });
                 }}
@@ -89,6 +94,7 @@ const Cart = () => {
         </>
     );
 }
+
     
     return (
         <div className={styles.container}>
@@ -98,7 +104,6 @@ const Cart = () => {
                         <tr className={styles.trTitle}>
                             <th>Product</th>
                             <th>Name</th>
-                            <th>Extras</th>
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Total</th>
@@ -120,13 +125,7 @@ const Cart = () => {
                                 <td>
                                     <span className={styles.name}>{product.title} </span>
                                 </td>
-                                <td>
-                                    <span className={styles.extras}>
-                                        {product.extras.map(extra => (
-                                            <span key={extra._id}>{extra.text}, </span>
-                                        ))}
-                                    </span>
-                                </td>
+                    
                                 <td>
                                     <span className={styles.price}> ${product.price}</span>
                                 </td>
@@ -134,7 +133,7 @@ const Cart = () => {
                                     <span className={styles.quantity}>{product.quantity}</span>
                                 </td>
                                 <td>
-                                    <span className={styles.total}>{product.price * product.quantity}</span>
+                                    <span className={styles.total}> $ {product.price * product.quantity}</span>
                                 </td>
                             </tr>
                         ))}

@@ -1,27 +1,44 @@
 .container {
     padding: 50px;
-    display: flex;
 }
 
 .item{
     flex: 1;
 }
-
 .table{
+    width: 80%;
+    border-spacing: 10px;
+    text-align: left;
+    outline: rgb(180, 180, 182) solid;
+}
+.table2{
     width: 100%;
     border-spacing: 20px;
     text-align: left;
+    max-height: 2rem;
+    outline: rgb(180, 180, 182) solid;
 }
 .button{
     border: none;
     color: rgb(255, 255, 255);
-    padding: 5px;
+    padding: 10px;
     cursor: pointer;
+    background-color: rgb(4, 133, 19);
+    border-radius: 7px;
 }
-.button:first-child{
-    background-color: rgb(250, 92, 119);
-    margin-right: 10px;
+.button1{
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(175, 0, 0);
+    border-radius: 7px;
+    margin-left: 10%;
 }
-.button:last-child{
-    background-color: rgb(15, 14, 14);
+
+.button1:hover{
+    background-color: rgb(229, 0, 0);
+}
+.button:hover{
+    background-color: rgb(2, 165, 32);
 }

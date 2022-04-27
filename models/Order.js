@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
 const OrderSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true,
+        maxlength: 60,
+    },
     customer: {
         type: String,
         required: true,
