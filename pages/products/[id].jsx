@@ -4,6 +4,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/cartSlice";
+import { cartOutline } from "ionicons/icons";
+import { useRef } from 'react';
 
 const Product = ( { product }) => {
     const [size, setSize] = useState(0);
@@ -12,7 +14,9 @@ const Product = ( { product }) => {
     const dispatch = useDispatch();
     const [title, setTitle] = useState("");
     
-    
+
+        const animationRef = useRef();
+     
     const changePrice = (number) => {  // This func will change the price according to the size chosen.
         setPrice(price + number) 
         // price will now be set to price(0) + the number received.
@@ -57,11 +61,13 @@ const Product = ( { product }) => {
         dispatch(addProduct({...product, price, quantity, title}));  //passess a payload with the addProduct reducer. Returns product price, details, quantity, extras, and price.
     };
 
+
+
     return (
         <div className={styles.container}>
             <div className={styles.left}>
                 <div className={styles.imgContainer}>
-                    <Image src={product.img} objectFit="contain" layout="fill" alt="cupcake" />
+                    <Image src={product.img}  objectFit="contain" layout="fill" alt="cupcake" />
                 </div>
             </div>
             <div className={styles.right}>
@@ -70,24 +76,24 @@ const Product = ( { product }) => {
                 <h3 className={styles.choose}>Choose the size</h3>
                 <div className={styles.sizes}>
                     <div className={styles.size} onClick={ () => handleSize(0)}> 
-                        <Image src={product.img} layout="fill" alt="" />
+                        <Image src="/img/sizes.jpg" layout="fill" alt="" />
                         <span className={styles.number}>Mini</span>
                     </div>
                     <div className={styles.size} onClick={ () => handleSize(1)}>
-                        <Image src={product.img} layout="fill" alt="" />
+                        <Image src="/img/sizes.jpg" layout="fill" alt="" />
                         <span className={styles.number}>Standard</span>
                     </div>
                     <div className={styles.size} onClick={ () => handleSize(2)}>
-                        <Image src={product.img} layout="fill" alt="" />
+                        <Image src="/img/sizes.jpg" layout="fill" alt="" />
                         <span className={styles.number}>Gourmet</span>
                     </div>
                 </div>
-        
+                <h3>Product Details</h3>
                 <p className={styles.desc}>{product.desc}</p>
-                <p>
+                <h5> 
                     Please contact us with specific requests and/<br />
                     or any allergies to ingredients like peanut butter.
-                </p>
+                </h5>
                 
                 <div className={styles.add}>
                     <input 
@@ -98,6 +104,10 @@ const Product = ( { product }) => {
 
                     />
                     <button className={styles.button} onClick={handleClick}> Add to cart </button>
+                   
+                <div className={styles.wrap}>
+                <button className={styles.btn}>Submit</button>
+                </div>
                 </div>
             </div>
         </div>

@@ -21,10 +21,6 @@ const Add = ( { setClose }) => {
     const handleExtraInput = (e) => {
       setExtra({ ...extra, [e.target.name] : e.target.value }); //assings the value to all the  extra inputs
     }
-
-    const handleExtra = (e) => {
-      setExtraOptions((prev) => [...prev, extra]); // includes all the extras we set above.
-    }
     
     const handleCreate = async () => {
       const data = new FormData();
@@ -98,35 +94,7 @@ const Add = ( { setClose }) => {
             />
           </div>
         </div>
-        <div className={styles.item}>
-          <label className={styles.label}>Extras</label>
-          <div className={styles.extra}>
-            <input
-              className={`${styles.input} ${styles.inputSm}`}
-              type="text"
-              placeholder="Item"
-              name="text"
-              onChange={handleExtraInput}
-            />
-            <input
-              className={`${styles.input} ${styles.inputSm}`}
-              type="number"
-              placeholder="Price"
-              name="price"
-              onChange={handleExtraInput}
-            />
-            <button className={styles.extraButton} onClick={handleExtra}>
-              Add
-            </button>
-          </div>
-          <div className={styles.extraItems}>
-            {extraOptions.map((option) => (
-              <span key={option.text} className={styles.extraItem}>
-                {option.text}
-              </span>
-            ))}
-          </div>
-        </div>
+        
         <button className={styles.addButton} onClick={handleCreate}>
           Create
         </button>

@@ -8,15 +8,19 @@
     padding: 20px 40px;
     cursor: pointer;
 }
-.container:hover{
-    background-color:
+.productimg{
+    border-radius: 50%;
 }
 .title{
     font-size: 18px;
     font-weight: bold;
-    color: rgb(93, 5, 20);
 }
-.price{
+.title:hover{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(13, 170, 144);
+}
+.prices{
     font-size: 18px;
     font-weight: bold;
     color: red;
@@ -24,6 +28,7 @@
 .desc{
     text-align: center;
     color: #777;
+    line-height: 1.5;
 }
 
 

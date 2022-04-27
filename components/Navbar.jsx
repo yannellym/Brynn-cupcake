@@ -26,9 +26,15 @@ const Navbar = () => {
                     <Link href="/" passHref>
                         <li className={styles.listItem}>Home</li>
                     </Link>
-                    <li className={styles.listItem}>About</li>
-                    <li className={styles.listItem}>Menu</li>
-                    <li className={styles.listItem}>Contact</li>
+                    <Link href="#about" passHref>
+                        <li className={styles.listItem}>About</li>
+                    </Link>
+                    <Link href="#menu" passHref>
+                        <li className={styles.listItem}>Menu</li>
+                    </Link>
+                    <Link href="#contact" passHref>
+                        <li className={styles.listItem}>Contact</li>
+                    </Link>
                 </ul>
             </div>
             <div className={styles.item}>

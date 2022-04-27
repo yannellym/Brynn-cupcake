@@ -8,6 +8,7 @@ import axios from 'axios'
 import Add from '../components/Add'
 import AddButton from '../components/AddButton'
 import { useState } from 'react'
+import Contact from '../components/Contact'
 
 export default function Home( { productList, admin }) {
   const [close, setClose] = useState(true);
@@ -24,6 +25,7 @@ export default function Home( { productList, admin }) {
       {admin && <span> <AddButton setClose={setClose} /> </span>}
       <ProductList productList={productList} />
       {!close && <Add setClose={setClose} />}
+      <Contact />
     </div>
   )
 }

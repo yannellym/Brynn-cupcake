@@ -1,0 +1,75 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-top: rgb(125, 42, 8) solid;
+    padding-bottom: 5%;
+}
+
+.wrapper{
+    display: flex;
+}
+
+.form {
+   max-width: 400px;
+   text-align: center;
+   margin: 20px auto;
+   margin-left: 7%;
+   padding: 3%;
+   border-radius: 8px;
+   background-color: rgb(230, 230, 230);
+}
+.form > label{
+    text-align: left;
+    width: 30px;
+    float: left;
+    padding: 3%;
+}
+.input, .textarea {
+     border:0; 
+     outline:0;
+     padding: 1em;
+     border-radius: 8px;
+     display: block;
+     width: 100%;
+     margin-top: 1em;
+     box-shadow: 0 1px 1px rgba(black, 0.1);
+     resize: none;
+     outline: rgb(41, 182, 175) solid 2px;
+}
+
+.contactphoto{
+    width: 40%; 
+    border-radius: 10px;
+}
+.submitbtn{
+    border:0; 
+     outline:0;
+     padding: 1em;
+     border-radius: 8px;
+     display: block;
+     width: 50%;
+     margin-top: 1em;
+     box-shadow: 0 1px 1px rgba(black, 0.1);
+     resize: none;
+     align-self: center;
+     justify-content: center;
+     background-color: red;
+     color: white;
+     margin: 6% auto;
+     font-size: 16px;
+     font-weight: bold;
+}
+.submitbtn:hover{
+    background-color:rgb(41, 182, 175);
+}
+
+@media (max-width: 480px) {
+  .half {
+     width: 100%; 
+     float: none;
+     margin-bottom: 0; 
+  }
+}
+
