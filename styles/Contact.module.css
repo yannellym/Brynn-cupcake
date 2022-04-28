@@ -6,13 +6,20 @@
     border-top: rgb(125, 42, 8) solid;
     padding-bottom: 5%;
 }
+.visible{
+    color: red; 
+}
+.hidden{
+    display: none;
+}
 
 .wrapper{
     display: flex;
 }
 
 .form {
-   max-width: 400px;
+    width: 400px;
+   max-width: 500px;
    text-align: center;
    margin: 20px auto;
    margin-left: 7%;

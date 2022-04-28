@@ -27,6 +27,7 @@ console.log(emailSent)
   return (
       <div className={styles.container} id="contact">
         <h1>Contact Us</h1>
+        <h4>Have a question? We're always here to lend a helping hand. </h4>
         <div className={styles.wrapper}>
             <Image src="/img/cupcakeset4.png" className={styles.contactphoto} height="500" width="500" alt="" />
             <form ref={form} onSubmit={sendEmail} className={styles.form}>
@@ -37,7 +38,7 @@ console.log(emailSent)
                 <label>Message</label>
                 <textarea name="message" required className={styles.textarea}/>
                 <input type="submit"  className={styles.submitbtn } value="Send" />
-                <span className={emailSent? "visible" : null } >Thank you for your message, we will be in touch in no time!</span>
+                <span className={emailSent? styles.visible : styles.hidden} >Thank you for your message, we will be in touch in no time!</span>
             </form>
         </div>
     </div>

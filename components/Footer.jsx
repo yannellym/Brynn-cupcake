@@ -10,9 +10,9 @@ const Footer = () => {
             </div>
             <div className={styles.item}>
                 <div className={styles.card}>
-                    <h2 className={styles.motto}>
-                        NO OTHER BETTER CUPCAKES THAN MINE.
-                    </h2>
+                    <h3 className={styles.motto}>
+                       <i> "The secret ingredient is always love" - Kim Berube</i>
+                    </h3>
                 </div>
                 <div className={styles.card}>
                     <h1 className={styles.title}> SOCIAL MEDIA</h1>
