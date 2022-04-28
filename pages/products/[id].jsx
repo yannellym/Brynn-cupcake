@@ -96,18 +96,16 @@ const Product = ( { product }) => {
                 </h5>
                 
                 <div className={styles.add}>
+                <label htmlFor="number"><strong>Quantity : </strong> </label>
                     <input 
                         type="number" 
                         defaultValue={1} 
-                        className={styles.quantity} 
+                        className={styles.quantity}
                         onChange={(e) => setQuantity(e.target.value)} //will update the quantity based on input chosen
-
                     />
-                    <button className={styles.button} onClick={handleClick}> Add to cart </button>
-                   
-                <div className={styles.wrap}>
-                <button className={styles.btn}>Submit</button>
-                </div>
+                    <div className={styles.wrap}>
+                        <button className={styles.btn} onClick={handleClick}>Submit</button>
+                    </div>
                 </div>
             </div>
         </div>

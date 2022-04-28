@@ -8,17 +8,16 @@
     padding: 20px 40px;
     cursor: pointer;
 }
+
+.con{
+    position: relative;
+}
 .productimg{
     border-radius: 50%;
 }
 .title{
     font-size: 18px;
     font-weight: bold;
-}
-.title:hover{
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(13, 170, 144);
 }
 .prices{
     font-size: 18px;
@@ -30,7 +29,34 @@
     color: #777;
     line-height: 1.5;
 }
-
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #ebeeee;
+    border-radius: 50%;
+  }
+  
+  .container:hover .overlay {
+    opacity: 0.8;
+  }
+  
+  .text {
+    color: rgb(255, 4, 4);
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
 
 @media screen and (max-width: 480px){
 
