@@ -114,7 +114,7 @@ const  Order = ( { order }) => {
 };
 
 export const getServerSideProps = async ( { params }) => { //fetching the ID of the product
-  const res = await axios.get(`https://vercel.com/api/orders/${params.id}`);
+  const res = await axios.get(`${process.env.BASE_URL}/api/orders/${params.id}`);
   return {
     props:  {
       order: res.data,
