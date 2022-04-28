@@ -13,6 +13,7 @@ const Product = ( { product }) => {
     const [quantity, setQuantity] = useState(1);
     const dispatch = useDispatch();
     const [title, setTitle] = useState("");
+    const [selected, setSelected] = useState(false)
     
 
         const animationRef = useRef();
@@ -40,21 +41,9 @@ const Product = ( { product }) => {
         //Example #1, will send 0 as the difference  
         //Example #2, will send 12 as the difference 
         setTitle(product.title) 
+        setSelected(true);
     }
-    const handleChange = (e, option) => {  //if the input was checked, we will add the 
-        const checked = e.target.checked;
 
-        if(checked){  //if the input is checked
-            changePrice(option.price); // change the price to the value of the option passed(extra ingredient)
-            setExtras(extraIngredients => [...extraIngredients, option]) //take all the previous values in setExtras and return them PLUS add the new option.
-        }else{
-            changePrice(-option.price); // if you dont 
-            setExtras(extras.filter(extra => extra._id !== option._id)); 
-            //take our array of extras and filter through it.
-            //if the ID of option that was clicked does not equal the id of the option that was passed into this function, keep it inside.
-            //if they're equal, remove it. This removes it by using the filter function on the array. 
-        }
-    }
 
     const handleClick = () => {
        
@@ -84,7 +73,7 @@ const Product = ( { product }) => {
                         <span className={styles.number}>Standard</span>
                     </div>
                     <div className={styles.size} onClick={ () => handleSize(2)}>
-                        <Image src="/img/sizes.jpg" layout="fill" alt="" />
+                        <Image src="/img/sizes.jpg"  layout="fill" alt="product" />
                         <span className={styles.number}>Gourmet</span>
                     </div>
                 </div>

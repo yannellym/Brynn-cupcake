@@ -3,7 +3,6 @@
 .container {
     padding: 50px;
     display: flex;
-    outline: red solid;
     height: 75vh;
   }
   
@@ -19,6 +18,7 @@
     width: 100px;
     height: 100px;
     position: relative;
+    margin-left: 25%;
   }
   
   .table {
@@ -28,7 +28,7 @@
   
   .name {
     font-weight: 500;
-    color: #d1411e;
+    color: #eb2f00;
     font-size: 18px;
   }
   
@@ -39,7 +39,7 @@
   }
   
   .wrapper {
-    width: 60%;
+    width: 70%;
     max-height: 300px;
     background-color: rgb(228, 228, 228);
     padding: 50px;
@@ -63,13 +63,12 @@
     margin-top: 20px;
     background-color: #ff0000;
     border: none;
-    box-shadow: 1px 1px 4px 2px rgb(195, 83, 83);
+    box-shadow: 1px 1px 4px 2px rgb(149, 23, 23);
   }
   .paymentMethods {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-    outline: red solid;
     min-height: 100px;
   }
   

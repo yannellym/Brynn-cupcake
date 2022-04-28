@@ -45,6 +45,11 @@
   position: relative;
   cursor: pointer;
 }
+.size:hover{
+  outline-width: 1px;
+  outline-style: dashed;
+  outline-color: red;
+}
 
 .size:nth-child(2) {
   width: 40px;
