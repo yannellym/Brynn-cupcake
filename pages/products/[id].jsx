@@ -13,8 +13,11 @@ const Product = ( { product }) => {
     const [quantity, setQuantity] = useState(1);
     const dispatch = useDispatch();
     const [title, setTitle] = useState("");
-    const [selected, setSelected] = useState(false)
-    
+    const [selected, setSelected] = useState(false);
+    const [mini, setMini] = useState(false);
+    const [standard, setStandard] = useState(false);
+    const [gourmet, setGourmet] = useState(false);
+   
 
         const animationRef = useRef();
      
@@ -41,9 +44,25 @@ const Product = ( { product }) => {
         //Example #1, will send 0 as the difference  
         //Example #2, will send 12 as the difference 
         setTitle(product.title) 
-        setSelected(true);
     }
 
+    const highlightMini = () => {
+        setMini(true);
+        setStandard(false);
+        setGourmet(false);
+    }
+
+    const highlightStandard = () => {
+        setMini(false);
+        setStandard(true);
+        setGourmet(false);
+    }
+
+    const highlightGourmet = () => {
+        setMini(false);
+        setStandard(false);
+        setGourmet(true);
+    }
 
     const handleClick = () => {
        
@@ -65,15 +84,15 @@ const Product = ( { product }) => {
                 <h3 className={styles.choose}>Choose the size</h3>
                 <div className={styles.sizes}>
                     <div className={styles.size} onClick={ () => handleSize(0)}> 
-                        <Image src="/img/sizes.jpg" layout="fill" alt="" />
+                        <Image className={mini && styles.highlight} src="/img/sizes.jpg" onClick={highlightMini} layout="fill" alt="" />
                         <span className={styles.number}>Mini</span>
                     </div>
                     <div className={styles.size} onClick={ () => handleSize(1)}>
-                        <Image src="/img/sizes.jpg" layout="fill" alt="" />
+                        <Image className={standard && styles.highlight} onClick={highlightStandard} src="/img/sizes.jpg" layout="fill" alt="" />
                         <span className={styles.number}>Standard</span>
                     </div>
                     <div className={styles.size} onClick={ () => handleSize(2)}>
-                        <Image src="/img/sizes.jpg"  layout="fill" alt="product" />
+                        <Image className={gourmet && styles.highlight} src="/img/sizes.jpg" onClick={highlightGourmet} layout="fill" alt="product" />
                         <span className={styles.number}>Gourmet</span>
                     </div>
                 </div>
@@ -89,6 +108,7 @@ const Product = ( { product }) => {
                     <input 
                         type="number" 
                         defaultValue={1} 
+                        min="1"
                         className={styles.quantity}
                         onChange={(e) => setQuantity(e.target.value)} //will update the quantity based on input chosen
                     />

@@ -54,11 +54,11 @@ const Index = ( { orders, products }) => {
                     <table className={styles.table}>
                         <tbody>
                             <tr className={styles.trTitle}>
-                                <th>Image</th>
+                                <th className={styles.image}>Image</th>
                                 <th>Id</th>
                                 <th>Title</th>
-                                <th>Price</th>
-                                <th>Action</th>
+                                <th className={styles.prices}>Prices</th>
+                                <th className={styles.action}>Action</th>
                             </tr>
                         </tbody>
                     </table>
@@ -69,15 +69,15 @@ const Index = ( { orders, products }) => {
                                 <td>
                                     <Image 
                                         src={product.img}
-                                        width={50}
-                                        height={50}
+                                        width={100}
+                                        height={60}
                                         objectFit="cover"
                                         alt=""
                                     />
                                 </td>
                                 <td>{product._id.slice(0,5)}...</td>
                                 <td>{product.title}</td>
-                                <td>${product.prices[0]}</td>
+                                <td>{product.prices.map(num => "$" + num + ", " )}</td>
                                 <td>
                                     <button className={styles.button1} onClick={ () => handleDelete(product._id) }>Delete Item</button> 
                                 </td>

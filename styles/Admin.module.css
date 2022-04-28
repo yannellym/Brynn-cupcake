@@ -11,12 +11,24 @@
     text-align: left;
     outline: rgb(180, 180, 182) solid;
 }
+
+.image{
+    width: 17%;
+}
+.prices{
+   padding-left: 25%;
+}
+.action{
+   float: right;
+   padding-right: 25%;
+}
 .table2{
     width: 100%;
     border-spacing: 20px;
     text-align: left;
     max-height: 2rem;
     outline: rgb(180, 180, 182) solid;
+    overflow: scroll;
 }
 .button{
     border: none;

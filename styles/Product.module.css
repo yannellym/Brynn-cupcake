@@ -15,7 +15,11 @@
   flex: 1;
   padding: 20px;
 }
-
+.highlight{
+  outline: rgb(255, 1, 1) solid 5px;
+  padding: 40px;
+  border-radius: 15px;
+}
 .imgContainer {
   width: 80%;
   height: 60%;

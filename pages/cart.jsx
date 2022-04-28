@@ -20,7 +20,7 @@ const Cart = () => {
 
     const createOrder = async (data) => {
         try{
-            const res = await axios.post(`${process.env.BASE_URL}/api/orders`, data)
+            const res = await axios.post("/api/orders", data)
 
             res.status === 201 && router.push("/orders/" + res.data._id);
             dispatch(reset());
@@ -50,7 +50,7 @@ const Cart = () => {
                 currency: currency,
             },
         });
-    }, [currency, showSpinner, dispatch, options]);
+    }, [currency, showSpinner]);
 
 
     return (<>

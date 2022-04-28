@@ -22,8 +22,8 @@ export default function Home( { productList, admin }) {
       </Head>
       <Featured />
       <About />
-      {admin && <span> <AddButton setClose={setClose} /> </span>}
       <ProductList productList={productList} />
+      {admin && <span> <AddButton setClose={setClose} /> </span>}
       {!close && <Add setClose={setClose} />}
       <Contact />
     </div>

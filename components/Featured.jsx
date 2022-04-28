@@ -5,6 +5,7 @@ import { useState } from "react";
 const Featured = () => {
   const [index, setIndex] = useState(0);
   const images = [
+    "/img/hero0.jpg",
     "/img/hero1.png",
     "/img/hero2.png",
     "/img/hero3.png",
@@ -23,7 +24,7 @@ const Featured = () => {
       <div className={styles.arrowContainer} style={{ left: 0 }} onClick={()=>handleArrow("l")}>
         <Image src="/img/arrowleft.png" alt="" layout="fill" objectFit="contain"/>
       </div>
-      <div className={styles.wrapper} style={{transform:`translateX(${-100*index}vw)`}}>
+      <div className={styles.wrapper} style={{transform:`translateX(${-60*index}vw)`}}>
         {images.map((img, i) => (
           <div className={styles.imgContainer} key={i}>
             <Image src={img} alt="" layout="fill" objectFit="contain"  />
