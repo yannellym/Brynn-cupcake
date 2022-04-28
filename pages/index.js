@@ -37,7 +37,7 @@ export const getServerSideProps = async (context) => {
   if(myCookie.token === process.env.TOKEN){
     admin = true ; //if the cookie matches, admin is logged in
   }
-  const res = await axios.get("http://localhost:3000/api/products");
+  const res = await axios.get("https://vercel.com/api/products");
   return {
     props:  {
       productList : res.data,

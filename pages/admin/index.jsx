@@ -13,7 +13,7 @@ const Index = ( { orders, products }) => {
 
     const handleDelete = async (id) => {
         try{
-            const res = await axios.delete("http://localhost:3000/api/products/" + id);
+            const res = await axios.delete("https://vercel.com/api/products/" + id);
             setProductList(productList.filter((product) => product._id !== id ));  
             // this will look through the productlist and if it equals this ID, it will delete it.
             //If not, it will stay like this. 
@@ -31,7 +31,7 @@ const Index = ( { orders, products }) => {
         //We get the status of the item we just found
 
         try{
-            const res = await axios.put("http://localhost:3000/api/orders/" + id, { status: currentStatus + 1});
+            const res = await axios.put("https://vercel.com/api/orders/" + id, { status: currentStatus + 1});
             //This will get the item we found above, its current status, and add one to it. 
             //By adding 1 to it, we will push from "Notifying baker" => "Baking" => "Ready" on every click.
             setOrderList([
@@ -136,8 +136,8 @@ export const getServerSideProps = async ( context ) => {
             },
         };
     }
-    const productRes = await axios.get("http://localhost:3000/api/products");
-    const orderRes = await axios.get("http://localhost:3000/api/orders");
+    const productRes = await axios.get("https://vercel.com/api/products");
+    const orderRes = await axios.get("https://vercel.com/api/orders");
 
     return {
         props: {
