@@ -11,12 +11,13 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { decrement, reset } from "../redux/cartSlice";
 
+
+
 const Cart = () => {
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart);
     const router = useRouter();
-
 
     const createOrder = async (data) => {
         try{
@@ -101,8 +102,12 @@ const Cart = () => {
         dispatch(decrement(id))
     }
 
+
     return (
         <div className={styles.container}>
+        <div className={styles.back}> 
+                <Image onClick={() => router.back()} src="/img/back.png" objectFit="contain" width={50} height={50} alt="goback" />
+            </div>
             <div className={styles.left}>
                 <table className={styles.table}>
                     <tbody>

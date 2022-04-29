@@ -8,6 +8,7 @@ import { cartOutline } from "ionicons/icons";
 import { useRef } from 'react';
 import { useRouter } from 'next/router'
 
+
 const Product = ( { product }) => {
     const [size, setSize] = useState(0);
     const [price, setPrice] = useState(product.prices[0]);
@@ -18,7 +19,7 @@ const Product = ( { product }) => {
     const [mini, setMini] = useState(false);
     const [standard, setStandard] = useState(false);
     const [gourmet, setGourmet] = useState(false);
-
+    
     const router = useRouter() // TO GO BACK
 
     const animationRef = useRef();
@@ -53,17 +54,17 @@ const Product = ( { product }) => {
         setStandard(true);
     }
 
-    const handleClick = () => {
-       
+    const handleClick = () => { 
         dispatch(addProduct({...product, price, quantity, title, size}));  //passess a payload with the addProduct reducer. Returns product price, details, quantity, extras, and price.
     };
 
-
+  
+    
 
     return (
         <div className={styles.container}>
             <div className={styles.back}> 
-                <Image onClick={() => router.back()} src="/img/back.png" objectFit="contain" width={50} height={50} alt="cupcake" />
+                <Image onClick={() => router.back()} src="/img/back.png" objectFit="contain" width={50} height={50} alt="goback" />
             </div>
             <div className={styles.left}>
                 <div className={styles.imgContainer}>
