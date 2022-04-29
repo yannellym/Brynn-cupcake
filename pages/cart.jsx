@@ -9,7 +9,7 @@ import {
 } from "@paypal/react-paypal-js";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { reset } from "../redux/cartSlice";
+import { decrement, reset } from "../redux/cartSlice";
 
 const Cart = () => {
     const [open, setOpen] = useState(false);
@@ -33,7 +33,7 @@ const Cart = () => {
     const amount = cart.total;
     const currency = "USD";
     const style = {"layout":"vertical"};
-    const title = cart.title;
+   
 
     
    // Custom component to wrap the PayPalButtons and handle currency changes
@@ -87,6 +87,8 @@ const Cart = () => {
                             total: cart.total,
                             method: 1,  //to pay with paypal
                             title: cart.title,
+                            quantity: cart.quantity,
+                            price: cart.price,
                         })
                     });
                 }}
@@ -95,7 +97,10 @@ const Cart = () => {
     );
 }
 
-    
+    function decrements(id){
+        dispatch(decrement(id))
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.left}>
@@ -134,6 +139,9 @@ const Cart = () => {
                                 </td>
                                 <td>
                                     <span className={styles.total}> $ {product.price * product.quantity}</span>
+                                </td>
+                                <td> 
+                                    <button className={styles.remove} onClick={() => decrements(product._id)}> delete </button>
                                 </td>
                             </tr>
                         ))}

@@ -28,6 +28,14 @@ const OrderSchema = new mongoose.Schema({
         type: Number,    
        required: true,
     },
+    quantity: {           
+        type: Number,    
+       required: true,
+    },
+    size: {          
+        type: String,    
+       required: true,
+    },
  },
     { timestamps: true } // will give us an update with CREATED, AND UPDATED. If we create a new product, it'll give us a timestamp. 
 );

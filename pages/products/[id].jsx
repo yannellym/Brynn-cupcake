@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/cartSlice";
 import { cartOutline } from "ionicons/icons";
 import { useRef } from 'react';
+import { useRouter } from 'next/router'
 
 const Product = ( { product }) => {
     const [size, setSize] = useState(0);
@@ -17,12 +18,13 @@ const Product = ( { product }) => {
     const [mini, setMini] = useState(false);
     const [standard, setStandard] = useState(false);
     const [gourmet, setGourmet] = useState(false);
-   
 
-        const animationRef = useRef();
+    const router = useRouter() // TO GO BACK
+
+    const animationRef = useRef();
      
     const changePrice = (number) => {  // This func will change the price according to the size chosen.
-        setPrice(price + number) 
+        setPrice(price ) 
         // price will now be set to price(0) + the number received.
         //Example #1, 0 is the difference . Price(12.99 + 0 = 12.99). Price is 12.99
         //Example #2, 12 is the difference . Price(12.99 + 12 = 24.99). Price is 24.99 
@@ -33,7 +35,7 @@ const Product = ( { product }) => {
         // The sizeIndex will either represent 12.99(0), 24.99 (1) or 32.99 (2)
         const difference = product.prices[sizeIndex] - product.prices[size]; 
         //This takes the index of the size' price and subtracts size (this will be 12.99 because size = 0. Product.prices[0] is 12.99)
-        //Example #1, if the user chooses mini cupcakes => Price will be 12.99, size is 0. 12.99 - 12.99. Difference = 0
+    
         //Example #2, if the user chooses standard cupcakes => price will be 24.99, size is 0. 24.99 - 12.99. Difference = 12.  
         setSize(sizeIndex);
         //sets the size to the sizeIndex we received when the user clicked on the size option 
@@ -46,11 +48,6 @@ const Product = ( { product }) => {
         setTitle(product.title) 
     }
 
-    const highlightMini = () => {
-        setMini(true);
-        setStandard(false);
-        setGourmet(false);
-    }
 
     const highlightStandard = () => {
         setMini(false);
@@ -58,21 +55,18 @@ const Product = ( { product }) => {
         setGourmet(false);
     }
 
-    const highlightGourmet = () => {
-        setMini(false);
-        setStandard(false);
-        setGourmet(true);
-    }
-
     const handleClick = () => {
        
-        dispatch(addProduct({...product, price, quantity, title}));  //passess a payload with the addProduct reducer. Returns product price, details, quantity, extras, and price.
+        dispatch(addProduct({...product, price, quantity, title, size}));  //passess a payload with the addProduct reducer. Returns product price, details, quantity, extras, and price.
     };
 
 
 
     return (
         <div className={styles.container}>
+            <div className={styles.back}> 
+                <Image onClick={() => router.back()} src="/img/back.png" objectFit="contain" width={50} height={50} alt="cupcake" />
+            </div>
             <div className={styles.left}>
                 <div className={styles.imgContainer}>
                     <Image src={product.img}  objectFit="contain" layout="fill" alt="cupcake" />
@@ -83,17 +77,9 @@ const Product = ( { product }) => {
                 <span className={styles.price}> ${price}</span>
                 <h3 className={styles.choose}>Choose the size</h3>
                 <div className={styles.sizes}>
-                    <div className={styles.size} onClick={ () => handleSize(0)}> 
-                        <Image className={mini && styles.highlight} src="/img/sizes.jpg" onClick={highlightMini} layout="fill" alt="" />
-                        <span className={styles.number}>Mini</span>
-                    </div>
                     <div className={styles.size} onClick={ () => handleSize(1)}>
                         <Image className={standard && styles.highlight} onClick={highlightStandard} src="/img/sizes.jpg" layout="fill" alt="" />
                         <span className={styles.number}>Standard</span>
-                    </div>
-                    <div className={styles.size} onClick={ () => handleSize(2)}>
-                        <Image className={gourmet && styles.highlight} src="/img/sizes.jpg" onClick={highlightGourmet} layout="fill" alt="product" />
-                        <span className={styles.number}>Gourmet</span>
                     </div>
                 </div>
                 <h3>Product Details</h3>
@@ -113,7 +99,7 @@ const Product = ( { product }) => {
                         onChange={(e) => setQuantity(e.target.value)} //will update the quantity based on input chosen
                     />
                     <div className={styles.wrap}>
-                        <button className={styles.btn} onClick={handleClick}>Submit</button>
+                        <button className={styles.btn} onClick={handleClick}>Add to cart</button>
                     </div>
                 </div>
             </div>

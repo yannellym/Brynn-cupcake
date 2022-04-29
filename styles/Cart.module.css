@@ -61,15 +61,26 @@
     font-weight: bold;
     cursor: pointer;
     margin-top: 20px;
-    background-color: #ff0000;
+    background-color: #06a423;
     border: none;
-    box-shadow: 1px 1px 4px 2px rgb(149, 23, 23);
+    box-shadow: 1px 1px 4px 2px rgb(2, 92, 21);
   }
   .paymentMethods {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     min-height: 100px;
+  }
+  .remove{
+    color: rgb(255, 255, 255);
+    background-color:rgb(248, 0, 0);
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    padding: 5%;
+  }
+  .remove:hover{
+    background-color: #9e0505;
   }
   
   @media screen and (max-width: 480px) {

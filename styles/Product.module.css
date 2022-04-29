@@ -2,7 +2,11 @@
   height: calc(100vh - 250px);
   display: flex;
 }
-
+.back{
+  width: 100px; 
+  padding-left: 3%;
+  padding-top: 2%;
+}
 .left {
   flex: 1;
   height: 100%;
