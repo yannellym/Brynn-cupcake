@@ -50,9 +50,7 @@ const Product = ( { product }) => {
 
 
     const highlightStandard = () => {
-        setMini(false);
         setStandard(true);
-        setGourmet(false);
     }
 
     const handleClick = () => {
@@ -99,7 +97,7 @@ const Product = ( { product }) => {
                         onChange={(e) => setQuantity(e.target.value)} //will update the quantity based on input chosen
                     />
                     <div className={styles.wrap}>
-                        <button className={styles.btn} onClick={handleClick}>Add to cart</button>
+                        <button className={standard? styles.btn : styles.disabled} onClick={handleClick}>Add to cart</button>
                     </div>
                 </div>
             </div>

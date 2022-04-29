@@ -176,6 +176,27 @@ content: '';
   }
 }
 
+.disabled{
+  min-width: 150px;
+  min-height: 40px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #ffffff;
+  background: gray;
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 6px 24px rgba(139, 139, 139, 0.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  pointer-events: none;
+
+}
+
 @media screen and (max-width: 480px) {
   .container {
     height: auto;
