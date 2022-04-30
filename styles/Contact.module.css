@@ -6,6 +6,9 @@
     border-top: rgb(125, 42, 8) solid;
     padding-bottom: 5%;
 }
+.container >h4{
+    text-align: center;
+}
 .visible{
     color: red; 
 }
@@ -52,21 +55,21 @@
 }
 .submitbtn{
     border:0; 
-     outline:0;
-     padding: 1em;
-     border-radius: 8px;
-     display: block;
-     width: 50%;
-     margin-top: 1em;
-     box-shadow: 0 1px 1px rgba(black, 0.1);
-     resize: none;
-     align-self: center;
-     justify-content: center;
-     background-color: red;
-     color: white;
-     margin: 6% auto;
-     font-size: 16px;
-     font-weight: bold;
+    outline:0;
+    padding: 1em;
+    border-radius: 8px;
+    display: block;
+    width: 50%;
+    margin-top: 1em;
+    box-shadow: 0 1px 1px rgba(black, 0.1);
+    resize: none;
+    align-self: center;
+    justify-content: center;
+    background-color: red;
+    color: white;
+    margin: 6% auto;
+    font-size: 16px;
+    font-weight: bold;
 }
 .submitbtn:hover{
     background-color:rgb(41, 182, 175);
@@ -74,9 +77,15 @@
 
 @media (max-width: 480px) {
   .half {
-     width: 100%; 
-     float: none;
-     margin-bottom: 0; 
+    width: 100%; 
+    float: none;
+    margin-bottom: 0; 
+  }
+  .wrapper{
+    display: block;
+  }
+  .form{
+    margin-left: 0px;
   }
 }
 

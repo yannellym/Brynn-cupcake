@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <div className={styles.container}>
             <div className={styles.item}>
-                <div className={styles.callButton}>
+                <div className={styles.logo}>
                   <Link href="/">
                     <a>
                         <Image src="/img/hero3.png" alt="logo" width="70" height="90" />
@@ -26,13 +26,13 @@ const Navbar = () => {
                     <Link href="/" passHref>
                         <li className={styles.listItem}>Home</li>
                     </Link>
-                    <Link href="#about" passHref>
+                    <Link href="/#about" passHref>
                         <li className={styles.listItem}>About</li>
                     </Link>
-                    <Link href="#menu" passHref>
+                    <Link href="/#menu" passHref>
                         <li className={styles.listItem}>Menu</li>
                     </Link>
-                    <Link href="#contact" passHref>
+                    <Link href="/#contact" passHref>
                         <li className={styles.listItem}>Contact</li>
                     </Link>
                 </ul>

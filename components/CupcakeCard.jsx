@@ -16,13 +16,13 @@ const CupcakeCard = ( { product }) => {
                     </div>
                 </Link>
             </div> 
-             <h1 className={styles.title}>{product.title}</h1>
-             <span className={styles.prices}> $ {product.prices[0]}</span>
-             <p className={styles.desc}>
-                 {product.desc}
-             </p>
+            <h1 className={styles.title}>{product.title}</h1>
+            <span className={styles.prices}> $ {product.prices[0]}</span>
+            <p className={styles.desc}>
+                {product.desc}
+            </p>
         </div>
-      );
+    );
 }
  
 export default CupcakeCard;
