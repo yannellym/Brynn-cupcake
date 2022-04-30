@@ -23,7 +23,7 @@ const Cart = () => {
         try{
             const res = await axios.post("/api/orders", data)
 
-            res.status === 201 && router.push("/orders/" + res.data._id);
+            res.status === 201 && router.push("orders/" + res.data._id);
             dispatch(reset());
         }catch(err){
             console.log(err)
@@ -54,7 +54,8 @@ const Cart = () => {
     }, [currency, showSpinner]);
 
 
-    return (<>
+    return (
+        <>
             { (showSpinner && isPending) && <div className="spinner" /> }
             <PayPalButtons
                 style={style}
@@ -98,7 +99,7 @@ const Cart = () => {
     );
 }
 
-    function decrements(id){
+    function decrements(id){ 
         dispatch(decrement(id))
     }
 

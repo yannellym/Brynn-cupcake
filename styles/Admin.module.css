@@ -54,3 +54,17 @@
 .button:hover{
     background-color: rgb(2, 165, 32);
 }
+
+ 
+@media screen and (max-width:480px) {
+    .table {
+        width: 95%;
+    }
+    .item{
+        width: 90%;
+    }
+    .table2{
+        max-width: 100px;
+        outline: red solid;
+    }
+  }
