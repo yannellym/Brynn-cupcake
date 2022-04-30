@@ -15,10 +15,7 @@ const Product = ( { product }) => {
     const [quantity, setQuantity] = useState(1);
     const dispatch = useDispatch();
     const [title, setTitle] = useState("");
-    const [selected, setSelected] = useState(false);
-    const [mini, setMini] = useState(false);
     const [standard, setStandard] = useState(false);
-    const [gourmet, setGourmet] = useState(false);
     
     const router = useRouter() // TO GO BACK
 
@@ -57,9 +54,6 @@ const Product = ( { product }) => {
     const handleClick = () => { 
         dispatch(addProduct({...product, price, quantity, title, size}));  //passess a payload with the addProduct reducer. Returns product price, details, quantity, extras, and price.
     };
-
-  
-    
 
     return (
         <div className={styles.container}>

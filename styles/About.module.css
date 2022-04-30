@@ -57,9 +57,10 @@
     }
     .aboutmecontainer{
         display: inline-block;
+        height: 100%;
     }
     .aboutme{
-        font-size: 1.2rem;
+        font-size: 17px;
         width: 100%; 
         min-width: 50%;
         line-height: 3;

@@ -29,7 +29,7 @@ console.log(emailSent)
         <h1>Contact Us</h1>
         <h4>Have a question? We are always here to lend a helping hand. </h4>
         <div className={styles.wrapper}>
-            <Image src="/img/cupcakeset4.png" className={styles.contactphoto} height="500" width="500" alt="" />
+            <Image src="/img/cupcakeset4.png" className={styles.contactphoto} height="400" width="300" alt="" />
             <form ref={form} onSubmit={sendEmail} className={styles.form}>
                 <label>Name</label>
                 <input className={styles.input} type="text" required name="user_name" />

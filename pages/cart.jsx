@@ -21,14 +21,15 @@ const Cart = () => {
 
     const createOrder = async (data) => {
         try{
-            const res = await axios.post("/api/orders", data)
-
-            res.status === 201 && router.push("orders/" + res.data._id);
-            dispatch(reset());
-        }catch(err){
-            console.log(err)
-        }
-    }
+            const res = await axios.post(`${process.env.BASE_URL}/api/orders`, data)
+            if (res.status === 201) {
+                dispatch(reset());
+                router.push(`/orders/${res.data._id}`);
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          };
 
     // This values are the props in the UI
     const amount = cart.total;

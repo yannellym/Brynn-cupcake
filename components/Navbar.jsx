@@ -12,7 +12,7 @@ const Navbar = () => {
                 <div className={styles.logo}>
                   <Link href="/">
                     <a>
-                        <Image src="/img/logo.png" alt="logo" width="60" height="80" />
+                        <Image src="/img/logo.png" alt="logo" width="50" height="70" />
                     </a>
                   </Link> 
                 </div>
