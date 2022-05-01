@@ -72,31 +72,19 @@ const Add = ( { setClose }) => {
           />
         </div>
         <div className={styles.item}>
-          <label className={styles.label}>Prices</label>
+          <label className={styles.label}>Price</label>
           <div className={styles.priceContainer}>
             <input
               className={`${styles.input} ${styles.inputSm}`}
               type="number"
-              placeholder="Mini"
+              placeholder="$ Dollars"
               onChange={(e) => changePrice(e, 0)}
-            />
-            <input
-              className={`${styles.input} ${styles.inputSm}`}
-              type="number"
-              placeholder="Standard"
-              onChange={(e) => changePrice(e, 1)}
-            />
-            <input
-              className={`${styles.input} ${styles.inputSm}`}
-              type="number"
-              placeholder="Gourmet"
-              onChange={(e) => changePrice(e, 2)}
             />
           </div>
         </div>
         
         <button className={styles.addButton} onClick={handleCreate}>
-          Create
+          Add item
         </button>
       </div>
     </div>

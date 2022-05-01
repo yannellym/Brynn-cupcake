@@ -31,7 +31,7 @@ const Index = ( { orders, products }) => {
         //We get the status of the item we just found
 
         try{
-            const res = await axios.put(`${process.env.BASE_URL}` + id, { status: currentStatus + 1});
+            const res = await axios.put("/api/orders/" + id, { status: currentStatus + 1});
             //This will get the item we found above, its current status, and add one to it. 
             //By adding 1 to it, we will push from "Notifying baker" => "Baking" => "Ready" on every click.
             setOrderList([

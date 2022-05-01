@@ -100,10 +100,11 @@
   .addButton {
     width: 25%;
     border: none;
-    background-color: rgb(241, 125, 224);
+    background-color: rgb(255, 0, 0);
     color: white;
     font-weight: 500;
     cursor: pointer;
     padding: 5px 0;
     align-self: flex-end;
+    border-radius: 10px;
   }

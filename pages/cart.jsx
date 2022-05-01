@@ -21,7 +21,7 @@ const Cart = () => {
 
     const createOrder = async (data) => {
         try{
-            const res = await axios.post(`${process.env.BASE_URL}/api/orders`, data)
+            const res = await axios.post("/api/orders", data)
             if (res.status === 201) {
                 dispatch(reset());
                 router.push(`/orders/${res.data._id}`);
@@ -56,25 +56,25 @@ const Cart = () => {
 
 
 
-        return (<>
-            { (showSpinner && isPending) && <div className="spinner" /> }
-            <PayPalButtons
-                style={style}
-                disabled={false}
-                forceReRender={[amount, currency, style]}
-                fundingSource={undefined}
-                createOrder={(data, actions) => {
-                    return actions.order
-                        .create({
-                            purchase_units: [
-                                {
-                                    amount: {
-                                        currency_code: currency,
-                                        value: amount,
-                                    },
+    return (<>
+        { (showSpinner && isPending) && <div className="spinner" /> }
+        <PayPalButtons
+            style={style}
+            disabled={false}
+            forceReRender={[amount, currency, style]}
+            fundingSource={undefined}
+            createOrder={(data, actions) => {
+                return actions.order
+                    .create({
+                        purchase_units: [
+                            {
+                                amount: {
+                                    currency_code: currency,
+                                    value: amount,
                                 },
-                            ],
-                        })
+                            },
+                        ],
+                    })
                         .then((orderId) => {
                             // Your code here after create the order
                             return orderId;
