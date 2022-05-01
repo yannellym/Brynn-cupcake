@@ -95,6 +95,7 @@ const Index = ( { orders, products }) => {
                                 <th>ID</th>
                                 <th>Product</th>
                                 <th>Customer</th>
+                                <th>Address</th>
                                 <th>Total</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -107,6 +108,7 @@ const Index = ( { orders, products }) => {
                                 <td> {order._id.slice(0,7)}... </td>
                                 <td> {order.title}</td>
                                 <td> {order.customer}</td>
+                                <td> {order.address}</td>
                                 <td> {order.total} </td>
                                 <td> {order.method === 1 && <strong>PAID</strong>} </td>
                                 <td> {status[order.status]}</td>
