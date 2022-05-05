@@ -1,8 +1,7 @@
 # ReClaim
 
 <img src="https://media.giphy.com/media/3PRMCqLVC66veuR2zD/giphy.gif" alt="BakedByBrynn" height="100%" /> <br/>
-Project Demo: https://reclaim-react.firebaseapp.com/  <br/>
-Project Social Media Promotion: https://www.linkedin.com/feed/update/urn:li:activity:6922179239895023616/
+Project Demo: https://bakedbybrynn.vercel.app/ <br/>
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -12,89 +11,72 @@ Project Social Media Promotion: https://www.linkedin.com/feed/update/urn:li:acti
 
 ## Overview
 ### Description
-ReClaim is an exclusive marketplace for people to trade, collect, and post recyclable goods in NYC. You get to help the earth and get some cool recyclable goods at the same time.
+BakedByBrynn is an e-commerce website that was created for a client. She's a local baker who sells cupcakes and other baked goods. This website highlights the delicious cupcakes that she makes. It also gives her an accessible and easy way to sell/display her cupcakes. 
 
 ### App Evaluation
-- **Category:** Social Networking / Recycling
-- **Desktop:** This app is primarily developed for desktop, it is similar to Meta's marketplace. A mobile version is expected later on this year.
-- **Story:** Users can trade, collect, and post recyclable goods in NYC. 
-- **Market:** Any individual could choose to use this app, and to keep it a safe environment. It is focused on invidiuals that want to keep the earth clean and care about recycling. 
-- **Habit:** This app could be used as often as the user wants. It depends on how much they care about the environment, and what exactly they're looking for.
-- **Scope:** The first step is to roll it out in NYC. Analyze how people interact, and how much they recycle. Then, the goal would be to expand to different states. An addition to the product would be a community forum. 
+- **Category:** Food/ Baked Goods
+- **Desktop:** This app is primarily developed for desktop, but it is also available on mobile. It is fully responsive and adaptable to different screens including mobile, Ipad, and Desktop. 
+- **Story:** Users can browse through the menu, see the item's details, and order an item. They can also see the details confirmation about the item purchased. 
+- **Market:** Any individual could choose to use this app. It can be individuals who are hungry, who have an event coming up, or even just a sweet tooth! BakedByBrynn is for everyone. 
+- **Habit:** This app could be used as often as the user wants. It depends on how often they go out for, are hungry, or crave sweets. 
+- **Scope:** The first step is to only display cupcakes in the menu. This way, Brynn can start building a specialized customer base and focus on what she does best. After this, we can scale up to including cakepops and other goods. Eventually, the goal is to allow users to leave reviews on the website and rate her baked goods.
 
 ## Product Spec
 ### 1. User Stories 
 
 **Required Must-have Stories**
 
-* User logs in to access the MarketPlace.
-* User searches recyclables by location or browses through the feed (think Indeed).
-* Claimed Batches have a page dedicated to them where you can unclaim if needed.
-* Liked Batches have a page dedicated to them where you can unlike if needed.
-* Profile pages for each user
+* User browses through the site.
+* User selects menu, and browses through menu.
+* User selects item, and looks at the item details.
+* User selects item quanity, and size. 
+* User adds item to cart and makes a payment
 
 **Optional Nice-to-have Stories**
 
-* More information about each user
-* How many batches they have claimed thus far
+* Rate/review the items
 * Community forum to interact with other users
-* Badges/levels to reward users
+
 
 ### 2. Screen Archetypes
 
-* Login 
-* Register - User signs up or logs into their account
-   * Upon Download/Reopening of the application, the user is prompted to log in to gain access to their profile information to access the MarketPlace.
-* MarketPlace - User is able to browse through the marketplace of recyclables. 
-   * They can search by lcoation, claimed, and liked.
-* Profile Screen 
-   * Allows user to upload a photo of themselves.
-* Liked Screen.
-   * Allows user to see what batches they have liked.
-* Claimed Screen.
-   * Allows user to see what batches they have claimed.
-* Upload Screen.
-   * Allows user to upload batches of their own.
-
+* Home
+  - Displays all the information including the hero, about me, menu, and contact sections. 
+  
+* Item details
+   - Details about the item, including the ingredients, and size. 
+* Cart
+   - displays the items that are added to the cart. It also enables the user to delete items. 
+* Admin
+   - Allows the admin to log in and add/edit items. 
 
 ### 3. Navigation
 
 **Tab Navigation** 
 
 * Home
-* MarketFeed
-* Liked Batches
-* Claimed Batches
-* Upload Batch
-* Profile
+* About me
+* Menu
+* Contact
+* Cart 
 
 
 **Flow Navigation** (Screen to Screen)
-* Log-in /Sign up -> Account creation if no log in is available
-* MarketFeed -> Jumps to all available batches
-* Liked batches -> batches that have been liked
-* Claimed batches -> batches that have been claimed
-* Upload batches -> option to upload batch
-* * Profile -> Profile photo to be uploaded 
+* Home -> browse through page
+* Menu -> browse through menu and select item => select size and quantity => add to cart
+* Cart -> delete items/ pay for items  => paypal screen => confirmation screen
+* Contact -> confirmation message
 
 ## Wireframes
 
-Figma prototype: https://www.figma.com/proto/7jKN0e9W72IBTZunEVyg63/ReClaim?node-id=350%3A405&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A6
-
-![Screen Shot 2022-04-20 at 5 37 25 PM](https://user-images.githubusercontent.com/91508647/164327111-5fc52654-3472-4798-89ff-d1c016118c2c.png)
-
+Figma prototype: https://www.figma.com/proto/ckJhPAKXO9Hv7Knq1dhVdW/BakedByBrynn?node-id=2%3A183&scaling=scale-down&page-id=0%3A1
 
 ### Digital Wireframes & Mockups
-<i![Screen Shot 2022-04-20 at 5 36 27 PM](https://user-images.githubusercontent.com/91508647/164327156-af12cec2-ea17-4f51-9698-1aa40bcf6243.png)
+![Screen Shot 2022-05-05 at 5 58 25 PM](https://user-images.githubusercontent.com/91508647/167032396-3577a86b-864a-4495-9c1f-3e2ec43c1885.png)
+![Screen Shot 2022-05-05 at 5 58 36 PM](https://user-images.githubusercontent.com/91508647/167032403-b7a7d4a2-6fa5-476f-a80a-4112cd0ab15f.png)
+![Screen Shot 2022-05-05 at 5 59 51 PM](https://user-images.githubusercontent.com/91508647/167032607-99910437-6003-4499-af23-2e6603063a18.png)
+![Screen Shot 2022-05-05 at 6 00 01 PM](https://user-images.githubusercontent.com/91508647/167032666-0655d7a4-f61d-4aa6-aa5e-bcf0dc4d3d0d.png)
 
-
-### Interactive Prototype
-<img src="https://media.giphy.com/media/hfK3Zy5mwFj5SMW58o/giphy.gif" width=200>
-
-
-
-### Design Systems
-![Screen Shot 2022-04-20 at 5 38 30 PM](https://user-images.githubusercontent.com/91508647/164327263-886cbd35-1736-469f-8760-c4ae5d4e12e9.png)
 
 
 
