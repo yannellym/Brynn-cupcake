@@ -1,4 +1,4 @@
-# ReClaim
+# BakedByBrynn
 
 <img src="https://media.giphy.com/media/3PRMCqLVC66veuR2zD/giphy.gif" alt="BakedByBrynn" height="100%" /> <br/>
 Project Demo: https://bakedbybrynn.vercel.app/ <br/>
